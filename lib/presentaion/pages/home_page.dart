@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/presentaion/pages/question_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,6 +16,7 @@ class HomePage extends StatelessWidget {
               image: AssetImage('assets/images/quiz-logo.png'),
               height: 350,
               width: 350,
+              color: const Color.fromARGB(146, 255, 255, 255),
             ),
             SizedBox(height: 70),
             Text(
@@ -23,7 +25,11 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 50),
             OutlinedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(
+                  context,
+                ).push(MaterialPageRoute(builder: (context) => QuestionPage()));
+              },
               style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
               icon: Icon(Icons.arrow_forward_outlined, color: Colors.white),
               label: Text('Start Quiz', style: TextStyle(color: Colors.white)),
